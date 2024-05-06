@@ -69,9 +69,9 @@ trigger OpportunityTrigger on Opportunity (before update, after update, before d
         }
 
         for(Opportunity opp : Trigger.new){
-            if(opp.Primary_Contact__c == null){
+            if(opp.PrimaryContact__c == null){
                 if (accountIdToContact.containsKey(opp.AccountId)){
-                    opp.Primary_Contact__c = accountIdToContact.get(opp.AccountId).Id;
+                    opp.PrimaryContact__c = accountIdToContact.get(opp.AccountId).Id;
                 }
             }
         }
